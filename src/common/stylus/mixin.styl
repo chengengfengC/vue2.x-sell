@@ -1,0 +1,19 @@
+border-1px($color) // tab的底边一像素
+  position: relative
+  &:after
+    display: block
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    border-top: 1px solid $color // 这里才是真正显示1px的地方
+    content: ' '
+
+border-none() // 去除上面的border-1px
+  &:after
+    display: none
+
+bg-image($url) // 当dpr不同时，背景图片的切换函数
+  background-image:url($url + "@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3),(-min-device-pixel-ratio: 3)
+    background-image: url($url + "@3x.png")

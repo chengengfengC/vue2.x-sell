@@ -114,7 +114,7 @@
       hide() { // 返回按钮
         this.showFlag = false;
       },
-      addFirst(event) 
+      addFirst(event) {
         if (!event._constructed) {
           return;
         } 
